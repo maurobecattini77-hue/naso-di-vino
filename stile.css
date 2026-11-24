@@ -109,6 +109,9 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; 
 .prezzo-libro.premium { background: var(--vino-chiaro); }
 
 /* ---------- degustazioni e dove trovarlo ---------- */
+.con-illustrazione { display: grid; grid-template-columns: 1fr 470px; gap: 40px; align-items: center; }
+.con-illustrazione img, .quando img { display: block; width: 100%; height: auto; }
+.quando { display: grid; grid-template-columns: 1fr 260px; gap: 40px; align-items: end; }
 .avviso { display: flex; gap: 18px; align-items: center; background: var(--vino); color: var(--giallo); border-radius: 18px; padding: 18px 26px; margin-top: 24px; }
 .avviso p { margin: 0; font-size: 17.5px; }
 .avviso strong { font-weight: 600; }
