@@ -75,7 +75,7 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; 
 
 /* ---------- benvenuti ---------- */
 .copertina { padding-top: 34px; }
-.copertina svg { display: block; width: 100%; height: auto; border-radius: 22px; box-shadow: var(--ombra); }
+.copertina img { display: block; width: 100%; height: auto; border-radius: 22px; box-shadow: var(--ombra); }
 .apertura { display: grid; grid-template-columns: 1.05fr 1fr; gap: 54px; align-items: start; padding-top: 40px; padding-bottom: 30px; }
 .slogan { font: italic 600 62px/1.04 'Playfair Display', Georgia, serif; color: var(--vino); margin: 0 0 6px; }
 .presenta { font-size: 19.5px; }
