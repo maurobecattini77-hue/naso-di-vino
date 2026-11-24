@@ -1,0 +1,153 @@
+/* Naso di Vino (5F, gruppo 1) - stile dal loro brief: «un rimando al mondo vinicolo», rosso, verde, marrone e giallo chiaro.
+   Caratteri scelti da me (non li hanno indicati): Playfair Display per i titoli, Source Sans 3 per il testo. */
+@font-face { font-family: 'Playfair Display'; src: url('font/PlayfairDisplay.ttf') format('truetype'); font-weight: 400 900; font-display: swap; }
+@font-face { font-family: 'Playfair Display'; src: url('font/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 400 900; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Source Sans 3'; src: url('font/SourceSans3.ttf') format('truetype'); font-weight: 200 900; font-display: swap; }
+
+:root {
+  --giallo: #f6ecc9;
+  --carta: #fffaf0;
+  --crema: #fbf3dc;
+  --vino: #6c1b27;
+  --vino-scuro: #4d111b;
+  --vino-chiaro: #f2dcd6;
+  --verde: #4f6b2f;
+  --verde-chiaro: #e1e7cd;
+  --marrone: #6b4a2f;
+  --marrone-chiaro: #ead9c2;
+  --oro: #c9a25a;
+  --inchiostro: #34261f;
+  --tenue: #6f5f52;
+  --linea: #e6d6b5;
+  --ombra: 0 6px 22px rgba(52, 38, 31, .09);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--giallo); }
+body {
+  margin: 0; min-width: 1240px; min-height: 100vh;
+  display: flex; flex-direction: column;
+  font: 400 18px/1.6 'Source Sans 3', system-ui, sans-serif; color: var(--inchiostro);
+  background: var(--giallo);
+}
+main { flex: 1; }
+a { color: var(--vino); text-decoration: none; }
+p { margin: 0 0 12px; }
+.cont { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+.tenue { color: var(--tenue); }
+
+/* la fascia a filari, come le vigne viste dall'alto */
+.filari {
+  height: 14px;
+  background: repeating-linear-gradient(90deg, var(--verde) 0 22px, #6f8a44 22px 30px, var(--marrone) 30px 34px, #6f8a44 34px 42px);
+  opacity: .9;
+}
+
+/* ---------- testata ---------- */
+.testata { position: sticky; top: 0; z-index: 10; background: var(--vino-scuro); color: var(--giallo); }
+.testata-dentro { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+.marca { display: flex; align-items: center; gap: 12px; color: var(--giallo); }
+.marca svg { width: 58px; height: 58px; }
+.marca-testo { font: 600 31px/1 'Playfair Display', Georgia, serif; white-space: nowrap; }
+.menu { display: flex; gap: 2px; }
+.menu a { font-weight: 600; font-size: 16.5px; color: var(--giallo); padding: 9px 15px; border-radius: 999px; white-space: nowrap; }
+.menu a:hover { background: rgba(246, 236, 201, .14); }
+.menu a.attiva { background: var(--giallo); color: var(--vino-scuro); }
+
+/* ---------- titoli e parti comuni ---------- */
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; margin: 0; }
+.occhiello { font-weight: 600; font-size: 15.5px; color: var(--verde); margin: 0 0 6px; letter-spacing: .02em; }
+.testa-scheda { padding-top: 50px; padding-bottom: 18px; }
+.testa-scheda h2 { font-size: 52px; line-height: 1.08; color: var(--vino); margin-bottom: 12px; }
+.intro { max-width: 840px; font-size: 19.5px; color: var(--tenue); }
+.fascia { padding-top: 16px; padding-bottom: 60px; }
+.riquadro { background: var(--carta); border-radius: 20px; padding: 26px 30px; box-shadow: var(--ombra); }
+.riquadro h3 { font-size: 27px; line-height: 1.15; color: var(--vino); margin-bottom: 8px; }
+.riquadro p:last-child { margin-bottom: 0; }
+.griglia { display: grid; gap: 24px; }
+.griglia.due { grid-template-columns: 1fr 1fr; }
+.griglia.tre { grid-template-columns: repeat(3, 1fr); }
+.bottone { display: inline-block; padding: 12px 26px; border-radius: 999px; font-weight: 600; margin: 10px 12px 0 0; font-size: 17px; }
+.bottone.pieno { background: var(--vino); color: var(--giallo); }
+.bottone.vuoto { background: var(--carta); color: var(--vino); box-shadow: inset 0 0 0 2px var(--vino); }
+.nota { font-size: 15px; color: var(--tenue); }
+.titoletto { font: 600 34px/1.15 'Playfair Display', Georgia, serif; color: var(--vino); margin: 40px 0 16px; }
+
+/* ---------- benvenuti ---------- */
+.copertina { padding-top: 34px; }
+.copertina svg { display: block; width: 100%; height: auto; border-radius: 22px; box-shadow: var(--ombra); }
+.apertura { display: grid; grid-template-columns: 1.05fr 1fr; gap: 54px; align-items: start; padding-top: 40px; padding-bottom: 30px; }
+.slogan { font: italic 600 62px/1.04 'Playfair Display', Georgia, serif; color: var(--vino); margin: 0 0 6px; }
+.presenta { font-size: 19.5px; }
+.info h3 { font-size: 25px; }
+.info p { margin: 0; }
+.info .grande { font: 600 23px/1.2 'Playfair Display', Georgia, serif; color: var(--inchiostro); margin-bottom: 6px; }
+.consapevole { background: var(--verde-chiaro); border-radius: 18px; padding: 18px 24px; margin-top: 8px; }
+.consapevole p { margin: 0; }
+
+/* ---------- il libro ---------- */
+.passi-uso { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.passo { background: var(--carta); border-radius: 20px; padding: 22px 26px; box-shadow: var(--ombra); }
+.passo .n { width: 42px; height: 42px; border-radius: 50%; background: var(--vino); color: var(--giallo); display: grid; place-items: center;
+  font: 600 22px/1 'Playfair Display', Georgia, serif; margin-bottom: 10px; }
+.passo p { margin: 0; }
+.vini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.vino { background: var(--carta); border-radius: 20px; padding: 18px 24px 22px; box-shadow: var(--ombra); display: grid; grid-template-columns: 108px 1fr; gap: 16px; align-items: start; }
+.vino svg { display: block; }
+.vino .doc { font-size: 13.5px; font-weight: 600; color: var(--verde); margin: 4px 0 2px; letter-spacing: .02em; }
+.vino h3 { font-size: 26px; line-height: 1.1; color: var(--vino); margin-bottom: 8px; }
+.vino dl { margin: 0; font-size: 15.5px; line-height: 1.45; }
+.vino dt { font-weight: 600; color: var(--marrone); margin-top: 6px; }
+.vino dd { margin: 0; }
+.versioni { display: grid; grid-template-columns: 560px 1fr; gap: 34px; align-items: center; }
+.versioni svg { display: block; }
+.prezzi-libro { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 16px; }
+.prezzo-libro { background: var(--carta); border-radius: 20px; padding: 20px 24px; box-shadow: var(--ombra); }
+.prezzo-libro .cifra { font: 600 54px/1 'Playfair Display', Georgia, serif; color: var(--vino); margin: 2px 0 6px; }
+.prezzo-libro h3 { font-size: 24px; color: var(--inchiostro); }
+.prezzo-libro p { margin: 0; font-size: 16.5px; }
+.prezzo-libro.premium { background: var(--vino-chiaro); }
+
+/* ---------- degustazioni e dove trovarlo ---------- */
+.avviso { display: flex; gap: 18px; align-items: center; background: var(--vino); color: var(--giallo); border-radius: 18px; padding: 18px 26px; margin-top: 24px; }
+.avviso p { margin: 0; font-size: 17.5px; }
+.avviso strong { font-weight: 600; }
+.calendario { display: grid; grid-template-columns: repeat(3, 1fr); border-radius: 18px; overflow: hidden; margin-top: 14px; }
+.calendario div { padding: 14px 16px; background: var(--crema); }
+.calendario div.si { background: var(--verde-chiaro); }
+.calendario .mese { font-weight: 600; display: block; }
+.calendario .cosa { font-size: 15px; color: var(--tenue); }
+.trovarlo { display: grid; grid-template-columns: 1fr 440px; gap: 40px; align-items: center; }
+.trovarlo svg { display: block; margin: 0 auto; }
+.luoghi { display: grid; gap: 16px; }
+
+/* ---------- il nostro marketing ---------- */
+.voce { display: grid; grid-template-columns: 54px 1fr; gap: 20px; background: var(--carta); border-radius: 20px; padding: 26px 30px; margin-bottom: 18px; box-shadow: var(--ombra); }
+.numero { width: 46px; height: 46px; border-radius: 50%; background: var(--verde); color: #fff; display: grid; place-items: center; font: 600 22px/1 'Playfair Display', Georgia, serif; }
+.voce h3 { font-size: 29px; line-height: 1.15; color: var(--vino); margin-bottom: 8px; }
+.voce p:last-child { margin-bottom: 0; }
+.swot { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.swot div { border-radius: 16px; padding: 14px 20px; }
+.swot h4, .quattro-p h4 { margin: 0 0 6px; font-size: 17px; }
+.swot ul { margin: 0; padding-left: 20px; }
+.s-forze { background: var(--verde-chiaro); }
+.s-debolezze { background: var(--vino-chiaro); }
+.s-opportunita { background: var(--crema); }
+.s-minacce { background: var(--marrone-chiaro); }
+.quattro-p { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 12px; }
+.quattro-p div { border-radius: 16px; padding: 14px 18px; }
+.quattro-p p { margin: 0; font-size: 16.5px; }
+.tabella { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.tabella th, .tabella td { text-align: left; vertical-align: top; padding: 11px 16px; border-bottom: 1px solid var(--linea); }
+.tabella th { width: 220px; font-weight: 600; }
+.tabella small { display: block; font-weight: 400; color: var(--tenue); font-size: 14px; }
+.tabella tr:last-child th, .tabella tr:last-child td { border-bottom: 0; }
+.con-figura { display: grid; grid-template-columns: 1fr 180px; gap: 24px; align-items: center; }
+.target { margin-top: 12px; background: var(--crema); border-radius: 16px; padding: 14px 20px; }
+
+/* ---------- piede ---------- */
+.piede { background: var(--vino-scuro); color: var(--giallo); padding: 28px 0 30px; }
+.piede-dentro { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+.piede .nome { font: 600 30px/1 'Playfair Display', Georgia, serif; margin: 0 0 6px; }
+.piede p { margin: 0; }
+.piede .nota { color: #d9c9a8; font-size: 14px; margin-top: 4px; }
